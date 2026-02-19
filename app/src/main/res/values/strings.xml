@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JogoVestir</string>
+    <string name="roupas">Trocar</string>
+    <string name="cor">Tema</string>
+</resources>
