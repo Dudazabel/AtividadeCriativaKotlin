@@ -97,13 +97,17 @@ fun JogoVestir(modifier: Modifier = Modifier){
             verticalArrangement = Arrangement.Center){
 
             Image(painter = painterResource(id = roupasResult), contentDescription = "Roupas" )
-            Spacer(modifier = Modifier.height(20.dp))
-            Button(onClick = {roupas = (2..5).random()}) {
-                Text(stringResource(R.string.roupas))
-            }
-            Spacer(modifier = Modifier.height(10.dp))
-            Button(onClick = {cor = (1..5).random()}) {
-                Text(stringResource(R.string.cor))
+
+            Row {
+                Button(onClick = {roupas = (2..5).random()}) {
+                    Text(stringResource(R.string.roupas))
+                }
+                Button(onClick = {cor = (1..5).random()},
+                    colors = ButtonDefaults.buttonColors(containerColor = corResult)) {
+                    Image(painter = painterResource(R.drawable.paletepincel),
+                        contentDescription = "Mudar Tema",
+                        modifier = Modifier.size(80.dp))
+                }
             }
 
         }
