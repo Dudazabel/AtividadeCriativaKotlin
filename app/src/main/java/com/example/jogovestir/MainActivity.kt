@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -73,30 +74,34 @@ fun JogoVestir(modifier: Modifier = Modifier){
     }
 
     Column{
-        Column(modifier = Modifier.background(corHFResult)
+        Column(modifier = Modifier
+            .background(corHFResult)
             .fillMaxWidth()){
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween){
                 Text(text = "DressUP",
                     modifier = Modifier.padding(25.dp))
-                Image(painter = painterResource(R.drawable.reiniciar),
-                    contentDescription = "Reiniciar",
-                    modifier = Modifier.size(70.dp))
+                Button(onClick = { roupas = 1 },
+                    colors = ButtonDefaults.buttonColors(containerColor = corHFResult)) {
+                    Image(painter = painterResource(R.drawable.reiniciar),
+                        contentDescription = "Reiniciar",
+                        modifier = Modifier.size(70.dp))
+                }
             }
         }
 
-        Column(modifier = Modifier.background(corResult)
+        Column(modifier = Modifier
+            .background(corResult)
             .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center){
 
-            Spacer(modifier = Modifier.height(30.dp))
             Image(painter = painterResource(id = roupasResult), contentDescription = "Roupas" )
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             Button(onClick = {roupas = (2..5).random()}) {
                 Text(stringResource(R.string.roupas))
             }
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Button(onClick = {cor = (1..5).random()}) {
                 Text(stringResource(R.string.cor))
             }
