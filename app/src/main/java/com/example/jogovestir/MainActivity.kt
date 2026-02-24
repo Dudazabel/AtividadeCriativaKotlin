@@ -66,11 +66,11 @@ fun JogoVestir(modifier: Modifier = Modifier){
     }
 
     var corHFResult = when(cor){
-        1 -> Color(0xFFFFC9F5)
-        2 -> Color(0xFFFF9FB2)
-        3 -> Color(0xFFF2D9FF)
-        4 -> Color(0xFFFFC58A)
-        else -> Color(0xFFFFCCD6)
+        1 -> Color(0xFFFF9EEA)
+        2 -> Color(0xFFFF6F91)
+        3 -> Color(0xFFE2B8FF)
+        4 -> Color(0xFFFFA64D)
+        else -> Color(0xFFFFA3B8)
     }
 
     Column{
@@ -80,12 +80,13 @@ fun JogoVestir(modifier: Modifier = Modifier){
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween){
                 Text(text = "DressUP",
-                    modifier = Modifier.padding(25.dp))
+                    modifier = Modifier.padding(16.dp),
+                    color = Color.White)
                 Button(onClick = { roupas = 1 },
                     colors = ButtonDefaults.buttonColors(containerColor = corHFResult)) {
                     Image(painter = painterResource(R.drawable.reiniciar),
                         contentDescription = "Reiniciar",
-                        modifier = Modifier.size(70.dp))
+                        modifier = Modifier.size(40.dp))
                 }
             }
         }
@@ -98,15 +99,19 @@ fun JogoVestir(modifier: Modifier = Modifier){
 
             Image(painter = painterResource(id = roupasResult), contentDescription = "Roupas" )
 
-            Row {
-                Button(onClick = {roupas = (2..5).random()}) {
+
+            Row{
+                Button(onClick = {roupas = (2..5).random()},
+                    colors = ButtonDefaults.buttonColors(containerColor = corHFResult),
+                    modifier = Modifier.padding(10.dp)
+                        .size(100.dp, 50.dp)) {
                     Text(stringResource(R.string.roupas))
                 }
                 Button(onClick = {cor = (1..5).random()},
-                    colors = ButtonDefaults.buttonColors(containerColor = corResult)) {
+                    colors = ButtonDefaults.buttonColors(containerColor = corResult),
+                    modifier = Modifier.size(140.dp, 70.dp)) {
                     Image(painter = painterResource(R.drawable.paletepincel),
-                        contentDescription = "Mudar Tema",
-                        modifier = Modifier.size(80.dp))
+                        contentDescription = "Mudar Tema")
                 }
             }
 
