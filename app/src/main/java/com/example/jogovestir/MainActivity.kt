@@ -134,13 +134,13 @@ fun JogoVestir(modifier: Modifier = Modifier){
             ) {
                 Image(
                     painter = painterResource(R.drawable.inicial),
-                    contentDescription = "inicial",
+                    contentDescription = "Página Inicial",
                     modifier = Modifier.size(40.dp)
                 )
                 Spacer(modifier = Modifier.width(88.dp))
                 Image(
                     painter = painterResource(R.drawable.configurar),
-                    contentDescription = "config",
+                    contentDescription = "Configurações",
                     modifier = Modifier.size(40.dp)
                 )
             }
