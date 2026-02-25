@@ -9,12 +9,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -73,7 +75,7 @@ fun JogoVestir(modifier: Modifier = Modifier){
         else -> Color(0xFFFFA3B8)
     }
 
-    Column{
+    Column(Modifier.fillMaxSize()){
         Column(modifier = Modifier
             .background(corHFResult)
             .fillMaxWidth()){
@@ -93,12 +95,12 @@ fun JogoVestir(modifier: Modifier = Modifier){
 
         Column(modifier = Modifier
             .background(corResult)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center){
 
             Image(painter = painterResource(id = roupasResult), contentDescription = "Roupas" )
-
 
             Row{
                 Button(onClick = {roupas = (2..5).random()},
@@ -114,7 +116,6 @@ fun JogoVestir(modifier: Modifier = Modifier){
                     Image(painter = painterResource(R.drawable.paletepincel),
                         contentDescription = "Mudar Tema")
                 }
-                Spacer(modifier = Modifier.height(20.dp))
             }
 
         }
