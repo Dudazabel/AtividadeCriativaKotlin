@@ -80,20 +80,20 @@ fun JogoVestir(modifier: Modifier = Modifier){
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween){
                 Text(text = "DressUP",
-                    modifier = Modifier.padding(16.dp),
+                    modifier = Modifier.padding(20.dp),
                     color = Color.White)
                 Button(onClick = { roupas = 1 },
                     colors = ButtonDefaults.buttonColors(containerColor = corHFResult)) {
                     Image(painter = painterResource(R.drawable.reiniciar),
                         contentDescription = "Reiniciar",
-                        modifier = Modifier.size(40.dp))
+                        modifier = Modifier.size(50.dp))
                 }
             }
         }
 
         Column(modifier = Modifier
             .background(corResult)
-            .fillMaxSize(),
+            .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center){
 
@@ -103,7 +103,8 @@ fun JogoVestir(modifier: Modifier = Modifier){
             Row{
                 Button(onClick = {roupas = (2..5).random()},
                     colors = ButtonDefaults.buttonColors(containerColor = corHFResult),
-                    modifier = Modifier.padding(10.dp)
+                    modifier = Modifier
+                        .padding(10.dp)
                         .size(100.dp, 50.dp)) {
                     Text(stringResource(R.string.roupas))
                 }
@@ -113,9 +114,9 @@ fun JogoVestir(modifier: Modifier = Modifier){
                     Image(painter = painterResource(R.drawable.paletepincel),
                         contentDescription = "Mudar Tema")
                 }
+                Spacer(modifier = Modifier.height(20.dp))
             }
 
         }
-
     }
 }
