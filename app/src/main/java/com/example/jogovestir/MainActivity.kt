@@ -104,7 +104,7 @@ fun JogoVestir(modifier: Modifier = Modifier){
             Image(painter = painterResource(id = roupasResult), contentDescription = "Roupas" )
 
             Row{
-                Button(onClick = {roupas = (2..5).random()},
+                Button(onClick = {roupas = (2..4).random()},
                     colors = ButtonDefaults.buttonColors(containerColor = corHFResult),
                     modifier = Modifier
                         .padding(10.dp)
