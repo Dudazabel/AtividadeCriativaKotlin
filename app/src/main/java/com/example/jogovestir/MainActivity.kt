@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -118,6 +119,32 @@ fun JogoVestir(modifier: Modifier = Modifier){
                 }
             }
 
+        }
+
+        Column(
+            modifier = Modifier
+                .background(corHFResult)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Row(
+                modifier = Modifier
+                    .background(corHFResult)
+                    .padding(12.dp)
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.inicial),
+                    contentDescription = "inicial",
+                    modifier = Modifier.size(40.dp)
+                )
+                Spacer(modifier = Modifier.width(88.dp))
+                Image(
+                    painter = painterResource(R.drawable.configurar),
+                    contentDescription = "config",
+                    modifier = Modifier.size(40.dp)
+                )
+            }
         }
     }
 }
