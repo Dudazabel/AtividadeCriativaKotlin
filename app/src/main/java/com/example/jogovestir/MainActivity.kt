@@ -130,7 +130,6 @@ fun JogoVestir(modifier: Modifier = Modifier){
         ) {
             Row(
                 modifier = Modifier
-                    .background(corHFResult)
                     .padding(12.dp)
             ) {
                 Image(
